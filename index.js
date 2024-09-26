@@ -8,7 +8,11 @@ const app = express();
 app.use(express.json());
 
 dotenv.config();
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://zesty-souffle-e31bb2.netlify.app/",
+  })
+);
 
 app.use("/api", dataRouter);
 
