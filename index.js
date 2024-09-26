@@ -5,7 +5,13 @@ import cors from "cors";
 
 dotenv.config();
 const app = express();
-app.use(cors());
+
+const corsOptions = {
+  origin: "https://ecom96.netlify.app/",
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true,
+};
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.use("/api", dataRouter);
