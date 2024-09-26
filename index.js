@@ -2,15 +2,15 @@ import express from "express";
 import dotenv from "dotenv";
 import dataRouter from "./routes/data.routes.js";
 import cors from "cors";
-import { insertProducts } from "./data.js";
-
-const app = express();
-app.use(express.json());
 
 dotenv.config();
+const app = express();
+app.use(express.json());
 app.use(
   cors({
-    origin: "https://zesty-souffle-e31bb2.netlify.app/",
+    origin: ["https://ecom96.netlify.app/", "http://localhost:3000"],
+    methods: ["GET", "POST"],
+    credentials: true,
   })
 );
 
